@@ -4,6 +4,7 @@
   "description": "ghostify your chrome tabs to free some memory space and improve performance",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,7 +16,6 @@
   "author": "melbarch",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint": "^6.6.0"
   }
 }
