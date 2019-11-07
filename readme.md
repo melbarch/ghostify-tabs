@@ -3,7 +3,7 @@ Ghostify your chrome tabs to free some memory space and improve performance
 
 Todo 
 
-- [ ] Filter only website chrome processes (check out chrome cli options)
+- [X] Filter only website chrome processes (check out chrome cli options)
 - [ ] readme updates : docs, screenshot before and after?
 - [ ] some logo for the package 
 - [ ] Add error handling : some errors of type 'There is currently no instance executed by this task.'
