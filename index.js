@@ -1,12 +1,36 @@
-const getAllChromeProcesses = () => {
-  return ['0','1'];
+"use strict";
+
+const exec = require("child_process").exec;
+const promisify = require("util").promisify;
+
+const asyncExec = promisify(exec);
+
+const getAllChromeProcesses = async () => {
+  const command =
+    "wmic process where Caption='chrome.exe' get CommandLine,ProcessId /value";
+  const result = await asyncExec(command);
+  const stdout = result.stdout;
+  const regex = /CommandLine=(.+)\s+ProcessId=(\d+)/g;
+  const processIds = [];
+  do {
+    var match = regex.exec(stdout);
+    if (match) {
+      processIds.push(match[2]);
+    }
+  } while (match);
+
+  return processIds;
 };
 
-const KillProcess = (process) => {
-  console.log('killing process : ' + process);
+const KillProcess = processList => {
+  const command = "taskkill /PID {ID} /F";
+  processList.forEach(async processId => {
+    await asyncExec(command.replace("{ID}", processId))
+  });
+  console.log("Found [" + processList.length + "] chrome process");
 };
 
-const process = getAllChromeProcesses();
-process.forEach(KillProcess);
-
-console.log('Done successfully');
+(async () => {
+  const processList = await getAllChromeProcesses();
+  KillProcess(processList);
+})();
