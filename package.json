@@ -1,0 +1,21 @@
+{
+  "name": "ghostify-tabs",
+  "version": "0.0.1",
+  "description": "ghostify your chrome tabs to free some memory space and improve performance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ghost",
+    "tabs",
+    "chrome",
+    "browser"
+  ],
+  "author": "melbarch",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
