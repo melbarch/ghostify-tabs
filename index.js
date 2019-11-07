@@ -15,7 +15,10 @@ const getAllChromeProcesses = async () => {
   do {
     var match = regex.exec(stdout);
     if (match) {
-      processIds.push(match[2]);
+      const IsExtension = match[1].indexOf('--extension-process') > 0;
+      if (!IsExtension) {
+        processIds.push(match[2]);
+      }
     }
   } while (match);
 
@@ -23,7 +26,7 @@ const getAllChromeProcesses = async () => {
 };
 
 const KillProcess = processList => {
-  const command = 'taskkill /PID {ID} /F';
+  const command = 'echo {ID}';
   processList.forEach(async processId => {
     await asyncExec(command.replace('{ID}', processId));
   });
