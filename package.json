@@ -1,8 +1,9 @@
 {
   "name": "ghostify-tabs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "ghostify your chrome tabs to free some memory space and improve performance",
-  "main": "index.js",
+  "repository": "https://github.com/melbarch/ghostify-tabs",
+  "bin": "index.js",
   "scripts": {
     "lint": "eslint index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +20,6 @@
     "eslint": "^6.6.0"
   },
   "engines": {
-		"node": ">=8"
-	}
+    "node": ">=8"
+  }
 }

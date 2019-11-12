@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 
 const exec = require('child_process').exec;
@@ -23,9 +24,9 @@ const getAllChromeProcesses = async () => {
 };
 
 const KillProcess = processList => {
-  const command = 'taskkill /PID {ID} /F';
+  const killCommand = 'taskkill /PID {ID} /F';
   processList.forEach(async processId => {
-    await asyncExec(command.replace('{ID}', processId));
+    await asyncExec(killCommand.replace('{ID}', processId));
   });
   console.log('Found [' + processList.length + '] chrome process');
 };
