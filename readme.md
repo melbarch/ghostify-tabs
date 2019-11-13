@@ -5,6 +5,7 @@
 	</p>
 	<br>
 </div>
+<img src="https://img.shields.io/npm/v/ghostify-tabs"/>
 
 # What is it?
 Ghostify-tabs kills chrome tabs processes in order to decrease the memory footprint of chrome, and free up system ressources<br />
